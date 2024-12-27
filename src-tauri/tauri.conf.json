@@ -1,6 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "lord",
+  "productName": "Lord - Sua Bíblia",
   "version": "0.1.0",
   "identifier": "com.tauri.dev",
   "build": {
@@ -13,8 +13,8 @@
     "windows": [
       {
         "title": "lord",
-        "width": 800,
-        "height": 600,
+        "width": 1600,
+        "height": 900,
         "resizable": true,
         "fullscreen": false
       }

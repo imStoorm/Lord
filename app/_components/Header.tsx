@@ -7,10 +7,14 @@ import DynamicAvatar from "./Avatar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const Header = ({ page }: { page: string }) => {
+interface HeaderProps {
+  page: string;
+  className?: string; // Torna o className opcional
+}
+const Header = ({ page, className }: HeaderProps) => {
 
   return (
-    <header className=" text-white py-2 my-7">
+    <header className={`${className} text-white py-2 my-7`}>
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo Section */}
         <div className="flex items-center gap-2">
