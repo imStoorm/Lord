@@ -1,4 +1,3 @@
-"use server"
 type Siglas = {
     [key: string]: { nome: string; capitulos: number };
   };
