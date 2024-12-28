@@ -100,9 +100,12 @@ export default function Bible() {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Select onValueChange={(value) => setCapitulo(Number(value))}>
+        <Select
+          value={capitulo.toString()}
+          onValueChange={(value) => setCapitulo(Number(value))}
+        >
           <SelectTrigger className="w-[70px]">
-            <SelectValue placeholder={capitulo} />
+            <SelectValue />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
@@ -145,7 +148,7 @@ export default function Bible() {
             className={`${inter.className} items-center cursor-pointer text-white hover:text-gray-400 disabled:opacity-50`}
             variant="outline"
             disabled={capitulo >= getNumeroCapitulos()}
-            onClick={() => {capitulo >= getNumeroCapitulos() ? null : setCapitulo((prev) => prev + 1)}}
+            onClick={() => {setCapitulo((prev) => prev + 1)}}
           >
             <h1>Próximo Capítulo</h1>
           </Button>
