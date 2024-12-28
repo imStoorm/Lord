@@ -66,10 +66,6 @@ A web application to read and navigate through the Bible efficiently. Users can 
 └── ...
 ```
 
-## Known Issues
-- Dropdown values may desync under specific edge cases.
-- Optimizations for larger datasets (e.g., complete Bible text) are ongoing.
-
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request with detailed information about your changes.
 
