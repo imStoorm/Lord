@@ -14,14 +14,11 @@ interface HeaderProps {
 const Header = ({ page, className }: HeaderProps) => {
 
   return (
-    <header className={`${className} text-white py-2 my-7`}>
+    <header className={`${className} text-white py-1 my-5`}>
       <div className="container mx-auto flex items-center justify-between px-4">
-        {/* Logo Section */}
         <div className="flex items-center gap-2">
           <img src="/logo.png" alt="Logo" className="w-full h-12"/>
         </div>
-
-        {/* Navigation Section */}
         <div className="flex items-center gap-6">
             <Button className={`flex items-center gap-2 cursor-pointer ${page === "home" ? "text-gray-400" : "text-white"} hover:text-gray-400`} variant="ghost" asChild>
                 <Link href={"/"}>
@@ -36,7 +33,6 @@ const Header = ({ page, className }: HeaderProps) => {
                 </Link>
             </Button>
         </div>
-        {/* Profile Section */}
         <div>
             <DynamicAvatar />
         </div>
