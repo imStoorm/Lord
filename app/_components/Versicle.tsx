@@ -7,7 +7,7 @@ const Versicle = (params: vericleParams) => {
     const { number, text } = params;
     return (
         <>
-        <h1 className="text-white text-3xl hover:bg-input">
+        <h1 className="text-white text-3xl hover:bg-input ">
             <span className="text-gray-400 text-xl mr-1 my-1">{number ? number : ""}</span>
             <span className="text-white text-2xl">{text}</span>
         </h1>

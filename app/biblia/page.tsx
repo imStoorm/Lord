@@ -70,22 +70,12 @@ export default function Bible() {
     <div className="flex flex-col h-screen">
       <Header page="bible" className="sticky top-0 z-10" />
 
-      <div
-        className={`w-[50%] h-[8%] mx-auto flex gap-3 items-center justify-between text-white p-4 border-b border-gray-300 relative`}
-      >
+      <div className={`w-[50%] h-[8%] mx-auto flex gap-3 items-center justify-between text-white p-4 border-b border-gray-300 relative`}>
         <div className="flex-1" />
-        <h1
-          className={`${myFont.className} text-white text-3xl absolute left-1/2 transform -translate-x-1/2`}
-        >
+        <h1 className={`${myFont.className} text-white text-3xl absolute left-1/2 transform -translate-x-1/2`}>
           {livro} {capitulo}
         </h1>
-        <Select
-          onValueChange={(value) => {
-            const nomeLivro = siglasData[value as keyof SiglasType].nome;
-            setLivro(nomeLivro);
-            setCapitulo(1);
-          }}
-        >
+        <Select onValueChange={(value) => {setLivro( siglasData[value as keyof SiglasType].nome); setCapitulo(1);}}>
           <SelectTrigger className="w-[100px]">
             <SelectValue placeholder={livro} />
           </SelectTrigger>
@@ -100,10 +90,7 @@ export default function Bible() {
             </SelectGroup>
           </SelectContent>
         </Select>
-        <Select
-          value={capitulo.toString()}
-          onValueChange={(value) => setCapitulo(Number(value))}
-        >
+        <Select value={capitulo.toString()} onValueChange={(value) => setCapitulo(Number(value))}>
           <SelectTrigger className="w-[70px]">
             <SelectValue />
           </SelectTrigger>
