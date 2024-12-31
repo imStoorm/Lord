@@ -72,11 +72,11 @@ const DynamicAvatar = () => {
           </Avatar>
         </SheetTrigger>
 
-        <SheetContent className="overflow-y-auto">
+        <SheetContent className="overflow-y-auto w-full">
           <SheetHeader>
             <SheetTitle>Seu Perfil</SheetTitle>
           </SheetHeader>
-          <div className="flex item-center py-5 border-b border-solid gap-3 justify-between" >
+          <div className="flex item-center py-5 border-b border-solid gap-3 justify-between w-full" >
             {userData.name ? (
               <div className="flex items-center py-5 border-b border-solid gap-3 justify-center">
               <div className="relative group">
