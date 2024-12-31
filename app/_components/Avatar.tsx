@@ -68,7 +68,7 @@ const DynamicAvatar = () => {
               alt="@user"
               className="object-cover w-full h-full"
             />
-            <AvatarFallback>U</AvatarFallback>
+            <AvatarFallback>{userData.name[0] || "U"}</AvatarFallback>
           </Avatar>
         </SheetTrigger>
 
@@ -86,7 +86,7 @@ const DynamicAvatar = () => {
                     alt="@user"
                     className="object-cover w-full h-full"
                   />
-                  <AvatarFallback>U</AvatarFallback>
+                  <AvatarFallback>{userData.name[0] || "U"}</AvatarFallback>
                 </Avatar>
                 <Badge className="absolute top-0 right-0 hidden group-hover:flex text-white bg-primary-foreground rounded-full w-8 h-8">
                   <FaPen className="w-6 h-6" />
