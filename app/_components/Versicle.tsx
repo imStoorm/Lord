@@ -1,13 +1,14 @@
 interface vericleParams {
     number: number;
     text: string;
+    isHovered?: boolean;
 }
 
 const Versicle = (params: vericleParams) => {
-    const { number, text } = params;
+    const { number, text, isHovered} = params;
     return (
         <>
-        <h1 className="text-white text-3xl hover:bg-white hover:bg-opacity-5">
+        <h1 className={`text-white text-3xl  hover:bg-white hover:bg-opacity-5`}>
             <span className="text-gray-400 text-xl mr-1 my-1">{number ? number : ""}</span>
             <span className="text-white text-2xl">{text}</span>
         </h1>
