@@ -18,6 +18,8 @@ import {
 } from "../_components/ui/select";
 import siglas from "../../public/siglas.json";
 
+import { FiAlignLeft, FiAlignRight, FiAlignCenter } from "react-icons/fi";
+
 interface LivroInfo {
   nome: string;
   capitulos: number;
@@ -40,6 +42,8 @@ export default function Bible() {
   const [versiculo, setVersiculo] = useState(1);
   const [texto, setTexto] = useState<Texto[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
+  const [align, setAlign] = useState("center");
 
   const livros = Object.entries(siglasData);
 
@@ -71,6 +75,17 @@ export default function Bible() {
       <Header page="bible" className="sticky top-0 z-10" />
 
       <div className={`w-[50%] h-[8%] mx-auto flex gap-3 items-center justify-between text-white p-4 border-b border-gray-300 relative`}>
+        <div className="flex gap-1">
+          <Button variant="outline" onClick={() => setAlign("left")}>
+            <FiAlignLeft style={{ width: 20, height: 20 }} />
+          </Button>
+          <Button variant="outline" onClick={() => setAlign("center")}>
+            <FiAlignCenter style={{ width: 20, height: 20 }} />
+          </Button>
+          <Button variant="outline" onClick={() => setAlign("right")}>
+            <FiAlignRight style={{ width: 20, height: 20 }} />
+          </Button>
+        </div>
         <div className="flex-1" />
         <h1 className={`${myFont.className} text-white text-3xl absolute left-1/2 transform -translate-x-1/2`}>
           {livro} {capitulo}
@@ -119,6 +134,7 @@ export default function Bible() {
             capitulo={capitulo}
             versiculo={versiculo}
             texto={texto}
+            align={align}
           />
         )}
 

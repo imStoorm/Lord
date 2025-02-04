@@ -19,12 +19,14 @@ interface BibleProps {
   livro: string;
   capitulo: number;
   versiculo: number;
-  texto?: Texto[]; // Torna o texto opcional
+  texto?: Texto[];
+  align: string; // Torna o texto opcional
 }
 
-const Biblia = ({ livro, capitulo, versiculo, texto }: BibleProps) => {
+const Biblia = ({ livro, capitulo, versiculo, texto, align }: BibleProps) => {
   const [hoveredVerse, setHoveredVerse] = useState<number[]>([]);
   const { toast } = useToast()
+  console.log(align)
   // Função para alternar o estado de isHovered
   const toggleHoveredVerse = (verseNumber: number) => {
     setHoveredVerse((prev) =>
@@ -34,7 +36,7 @@ const Biblia = ({ livro, capitulo, versiculo, texto }: BibleProps) => {
     );
   };
   const handleCopy = () => {
-    const selectedText = "\"" + texto?.filter((item) => hoveredVerse.includes(item.number)).map((item) => `${item.text}`).join(" ") + "\"\n\n" + `${livro} ${capitulo}:${hoveredVerse.sort()[0]}-${hoveredVerse.sort()[hoveredVerse.length - 1]}`;
+    const selectedText = "\"" + texto?.filter((item) => hoveredVerse.includes(item.number)).map((item) => `${item.text}`).join(" ") + "\"\n\n" + `${livro} ${capitulo}:${hoveredVerse.sort()[0]}${hoveredVerse[1] ? `-${hoveredVerse.sort()[hoveredVerse.length - 1]}` : ""}`;
 
     if (selectedText) {
       navigator.clipboard.writeText(selectedText);
@@ -46,7 +48,7 @@ const Biblia = ({ livro, capitulo, versiculo, texto }: BibleProps) => {
 
   return (
     <ScrollArea
-      className={`${myFont.className} w-[50%] flex mx-auto text-center text-white p-4 overflow-y-auto justify-center`}
+      className={`${myFont.className} w-[50%] flex mx-auto text-${align} text-white p-4 overflow-y-auto justify-center`}
     >
       {texto?.map((item) => {
         const isHovered = hoveredVerse.includes(item.number);
